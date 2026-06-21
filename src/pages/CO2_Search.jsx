@@ -91,6 +91,7 @@ export default function CO2_Search({ isCompleted, toggleCompleted }) {
   const runPathfinding = async () => {
     if (isRunning) return;
     setIsRunning(true);
+    isRunningRef.current = true;
 
     let tempGrid = grid.map(row => row.map(cell => ({
       ...cell,
@@ -466,7 +467,7 @@ simulate_evacuation()
 
             <div style={{ marginLeft: 'auto', display: 'flex', gap: '0.5rem' }}>
               {isRunning ? (
-                <button className="btn btn-secondary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem' }} onClick={() => setIsRunning(false)}>
+                <button className="btn btn-secondary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem' }} onClick={() => { setIsRunning(false); isRunningRef.current = false; }}>
                   <Pause size={12} /> Stop
                 </button>
               ) : (
