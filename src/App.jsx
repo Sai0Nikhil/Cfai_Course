@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { 
-  BookOpen, 
-  Layers, 
-  Activity, 
-  Compass, 
-  HelpCircle, 
-  CheckCircle, 
-  Home, 
-  ShieldAlert, 
+import {
+  BookOpen,
+  Layers,
+  Activity,
+  Compass,
+  HelpCircle,
+  CheckCircle,
+  Home,
+  ShieldAlert,
   Award,
   Sparkles,
   ChevronRight
@@ -132,44 +132,44 @@ export default function App() {
           <Dashboard progress={progress} setPage={setPage} />
         )}
         {page === 'CO1' && (
-          <CO1_Foundations 
-            isCompleted={progress.CO1} 
-            toggleCompleted={() => toggleCompleted('CO1')} 
+          <CO1_Foundations
+            isCompleted={progress.CO1}
+            toggleCompleted={() => toggleCompleted('CO1')}
           />
         )}
         {page === 'CO2' && (
-          <CO2_Search 
-            isCompleted={progress.CO2} 
-            toggleCompleted={() => toggleCompleted('CO2')} 
+          <CO2_Search
+            isCompleted={progress.CO2}
+            toggleCompleted={() => toggleCompleted('CO2')}
           />
         )}
         {page === 'CO3' && (
-          <CO3_Constraints 
-            isCompleted={progress.CO3} 
-            toggleCompleted={() => toggleCompleted('CO3')} 
+          <CO3_Constraints
+            isCompleted={progress.CO3}
+            toggleCompleted={() => toggleCompleted('CO3')}
           />
         )}
         {page === 'CO4' && (
-          <CO4_Games 
-            isCompleted={progress.CO4} 
-            toggleCompleted={() => toggleCompleted('CO4')} 
+          <CO4_Games
+            isCompleted={progress.CO4}
+            toggleCompleted={() => toggleCompleted('CO4')}
           />
         )}
         {page === 'CO5' && (
-          <CO5_Probability 
-            isCompleted={progress.CO5} 
-            toggleCompleted={() => toggleCompleted('CO5')} 
+          <CO5_Probability
+            isCompleted={progress.CO5}
+            toggleCompleted={() => toggleCompleted('CO5')}
           />
         )}
         {page === 'CO6' && (
-          <CO6_Hybrid 
-            isCompleted={progress.CO6} 
-            toggleCompleted={() => toggleCompleted('CO6')} 
+          <CO6_Hybrid
+            isCompleted={progress.CO6}
+            toggleCompleted={() => toggleCompleted('CO6')}
           />
         )}
 
         <footer style={{ marginTop: '4rem', borderTop: '1px solid var(--border-medium)', paddingTop: '1.5rem', paddingBottom: '1rem', textAlign: 'center', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-          <p style={{ margin: 0, fontWeight: '500' }}>Created by Active Student sai nikhil under guidance of Prof. SuryaKanth V gangashetty</p>
+          <p style={{ margin: 0, fontWeight: '500' }}>Created by sai nikhil under guidance of Prof. SuryaKanth V gangashetty Section 9 </p>
         </footer>
       </main>
     </div>
