@@ -32,7 +32,22 @@ export default function MCQSection({ coId }) {
     // Slice to selected number
     const selected = shuffled.slice(0, Math.min(numQuestions, shuffled.length));
 
-    setQuestions(selected);
+    // Shuffle options dynamically for each question to avoid predictable answer indices (e.g. all 'B')
+    const preparedQuestions = selected.map(q => {
+      const optionsWithIndex = q.options.map((text, idx) => ({
+        text,
+        isCorrect: idx === q.correctAnswer
+      }));
+      // Perform a random sort on the options
+      const shuffledOptions = [...optionsWithIndex].sort(() => Math.random() - 0.5);
+      return {
+        ...q,
+        options: shuffledOptions.map(o => o.text),
+        correctAnswer: shuffledOptions.findIndex(o => o.isCorrect)
+      };
+    });
+
+    setQuestions(preparedQuestions);
     setCurrentIndex(0);
     setSelectedOption(null);
     setIsAnswered(false);
